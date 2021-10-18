@@ -2,7 +2,14 @@ import React, { useState, useEffect } from 'react';
 import queryString from 'query-string';
 import io from 'socket.io-client';
 
+import './Chat.css'
+
+import InfoBar from '../InfoBar/InfoBar';
+import Input from '../Input/Input';
+import Messages from '../Messages/Messages';
+
 let socket;
+
 
 const Chat = ({ location }) => {
   const [name, setName] = useState('');
@@ -17,14 +24,15 @@ const Chat = ({ location }) => {
     socket = io(ENDPOINT);
 
     setName(name);
-    setRoom(room);  
-
+    setRoom(room); 
+   
+    console.log(name, room) 
     socket.emit('join', { name, room }, () => {
         
     });
 
     return () => {
-      socket.emit('disconnect');
+      socket.disconnect();
       socket.off();
     }
   }, [ENDPOINT, location.search]);
@@ -43,14 +51,15 @@ const Chat = ({ location }) => {
     }
   }
 
-  console.log(message, messages);
+  // console.log(message, messages);
 
   return (
     <div className = 'outerContainer'>
       <div className="container">
-        <input value={message} onChange={(event) => setMessage(event.target.value)}
-        onKeyPress={event => event.key === 'Enter' ? sendMessage(event) : null}/>
-      </div>
+        <InfoBar room={room}/>
+        <Messages messages={messages}/>
+        <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
+       </div>
     </div>
   )
 }
