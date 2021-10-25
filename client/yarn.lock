@@ -2629,6 +2629,11 @@
   "resolved" "https://registry.npmjs.org/@netlify/open-api/-/open-api-2.5.1.tgz"
   "version" "2.5.1"
 
+"@netlify/open-api@^2.5.2":
+  "integrity" "sha512-OoqnEsmBRLUtt99aI566iRQLy/9I4oHhVYPu10bpOPKU9iz4zUYh0AZGcoqkG+ThgNfL4FL93HTdS20krLyj/w=="
+  "resolved" "https://registry.npmjs.org/@netlify/open-api/-/open-api-2.5.2.tgz"
+  "version" "2.5.2"
+
 "@netlify/plugin-edge-handlers@^1.11.22":
   "integrity" "sha512-tFb7J6+YEtZP0OYpS/b9Rjp1lm02XfhAQR6KRHAaeRlHp98/zgd0hhubfwXUCppP2BLfn+imkeVS0FnANh5B3g=="
   "resolved" "https://registry.npmjs.org/@netlify/plugin-edge-handlers/-/plugin-edge-handlers-1.11.22.tgz"
@@ -12617,6 +12622,19 @@
   "version" "8.0.2"
   dependencies:
     "@netlify/open-api" "^2.5.1"
+    "lodash.camelcase" "^4.3.0"
+    "micro-api-client" "^3.3.0"
+    "node-fetch" "^2.6.1"
+    "omit.js" "^2.0.2"
+    "p-wait-for" "^3.2.0"
+    "qs" "^6.9.6"
+
+"netlify@^8.0.3":
+  "integrity" "sha512-X20SPnE1N/nRiXa6j7BRrn/TtL4i8sgawFLHOBC5e1HzUUwPyNQAiK7nWFv4igUHUZZbIWFSqTzB/ZoHsOrJEA=="
+  "resolved" "https://registry.npmjs.org/netlify/-/netlify-8.0.3.tgz"
+  "version" "8.0.3"
+  dependencies:
+    "@netlify/open-api" "^2.5.2"
     "lodash.camelcase" "^4.3.0"
     "micro-api-client" "^3.3.0"
     "node-fetch" "^2.6.1"
